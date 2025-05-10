@@ -1,7 +1,7 @@
-package com.fst.first.repository;
+package com.jee.projet1.repository;
 
 
-import com.fst.first.model.Medicament;
+import com.jee.projet1.model.Medicament;
 
 import java.util.List;
 
