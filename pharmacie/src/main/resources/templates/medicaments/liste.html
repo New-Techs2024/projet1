@@ -7,23 +7,23 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1>Gestion des Médicaments</h1>
+        <h1>Liste des Médicaments:</h1>
         
         <form th:action="@{/pharmacie/medicaments/rechercher}" method="get" class="mb-4">
             <div class="input-group">
-                <input type="text" th:field="${searchForm.searchTerm}" class="form-control" placeholder="Rechercher un médicament...">
+                <input type="text" th:field="${searchForm.searchTerm}" class="form-control" placeholder="Rechercher un article ...">
                 <button type="submit" class="btn btn-primary">Rechercher</button>
                 <a href="/pharmacie/medicaments" class="btn btn-secondary">Réinitialiser</a>
             </div>
         </form>
         
-        <a th:href="@{/pharmacie/medicaments/ajouter}" class="btn btn-success mb-3">Ajouter un médicament</a>
+        <a th:href="@{/pharmacie/medicaments/ajouter}" class="btn btn-success mb-3">Ajouter un article</a>
         
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nom</th>
+                    <th>Libelle</th>
                     <th>Quantité</th>
                     <th>Prix</th>
                     <th>Actions</th>
@@ -32,7 +32,7 @@
             <tbody>
                 <tr th:each="medicament : ${medicaments}">
                     <td th:text="${medicament.id}"></td>
-                    <td th:text="${medicament.nom}"></td>
+                    <td th:text="${medicament.libelle}"></td>
                     <td th:text="${medicament.quantite}"></td>
                     <td th:text="${'$' + medicament.prix}"></td>
                     <td>
