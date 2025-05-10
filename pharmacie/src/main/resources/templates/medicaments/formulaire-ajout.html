@@ -11,9 +11,9 @@
         
         <form th:action="@{/pharmacie/medicaments/ajouter}" th:object="${medicament}" method="post">
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" th:field="*{nom}" required>
-                <div th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}" class="text-danger"></div>
+                <label for="nom" class="form-label">libelle</label>
+                <input type="text" class="form-control" id="libelle" th:field="*{libelle}" required>
+                <div th:if="${#fields.hasErrors('libelle')}" th:errors="*{nom}" class="text-danger"></div>
             </div>
             
             <div class="mb-3">
@@ -28,7 +28,7 @@
                 <div th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}" class="text-danger"></div>
             </div>
             
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <button type="submit" class="btn btn-primary">Valider</button>
             <a th:href="@{/pharmacie/medicaments}" class="btn btn-secondary">Annuler</a>
         </form>
     </div>
